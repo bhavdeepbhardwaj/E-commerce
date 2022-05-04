@@ -30,7 +30,7 @@ class UsertableSeeder extends Seeder
 
             // Vender
             [
-                'full_name' =>'Bhavdeep Bharadwaj',
+                'full_name' =>'Vender',
                 'username'  =>'Vender',
                 'email'     =>'vender@gmail.com',
                 'password'  =>Hash::make('Vender@123'),
@@ -40,7 +40,7 @@ class UsertableSeeder extends Seeder
 
             // Customer
             [
-                'full_name' =>'Bhavdeep Bharadwaj',
+                'full_name' =>'Customer',
                 'username'  =>'Customer',
                 'email'     =>'customer@gmail.com',
                 'password'  =>Hash::make('Customer@123'),

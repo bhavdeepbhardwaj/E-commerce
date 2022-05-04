@@ -27,7 +27,25 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function redirectTo()
+    {
+        if (Auth()->user()->role == 'admin') {
+            return redirect()->route('admin.dashboard');
+        } else if (Auth()->user()->role == 'vender') {
+            return redirect()->route('vender.dashboard');
+        } else if (Auth()->user()->role == 'customer') {
+            return redirect()->route('customer.dashboard');
+        } else if (Auth()->user()->role == 4) {
+            return route('resource.dashboard');
+        } else if (Auth()->user()->role == 5) {
+            return route('employee.dashboard');
+        } else {
+            return redirect()->route('login')->with('error', 'Either Email or Password is wrong');
+            // return redirect()->back()->with('error','Either Email or Password is wrong');
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -42,9 +60,40 @@ class LoginController extends Controller
     public function credentials(Request $request)
     {
         return [
-        'email'=>$request->email,
-        'password'=>$request->password,
-        'status'=>'active',
-        'role'=>'admin'];
+            'email' => $request->email,
+            'password' => $request->password,
+            'status' => 'active',
+            'role' => 'admin'
+        ];
+    }
+
+    public function login(Request $request)
+    {
+        $input = $request->all();
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        // dd($this);
+
+        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
+
+            if (Auth()->user()->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            } else if (Auth()->user()->role == 'vender') {
+                return redirect()->route('vender.dashboard');
+            } else if (Auth()->user()->role == 'customer') {
+                return redirect()->route('customer.dashboard');
+            } else if (Auth()->user()->role == 4) {
+                return redirect()->route('resource.dashboard');
+            } else if (Auth()->user()->role == 5) {
+                return redirect()->route('employee.dashboard');
+            } else {
+                return redirect()->route('login')->with('error', 'Either Email or Password is wrong');
+                // return redirect()->back()->with('error','Either Email or Password is wrong');
+            }
+        }
+        return redirect()->route('login')->with('error', 'Either Email or Password is wrong');
     }
 }

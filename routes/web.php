@@ -21,21 +21,47 @@ Route::get('/', function () {
     // return view('frontend.layouts.app');
 });
 
+
+
+
 // Auth::routes();
 Auth::routes();
 
+Route::group(['middleware' => 'PreventBackHistory'], function () {
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Admin Dashboard
+// Admin Routes
 
-Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
-    Route::get('/',[\App\Http\Controllers\AdminController::class,'admin'])->name('admin');
+Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {
+
+    // Admin Dashboard
+    // Route::get('/', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin');
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.dashboard');
 
     // Banner Section
+    Route::resource('/banner', 'BannerController');
+});
 
-    Route::resource('/banner','BannerController');
+
+
+// customer Routes
+
+Route::group(['prefix' => 'customer', 'middleware' => ['isCustomer', 'auth', 'PreventBackHistory']], function () {
+
+ // Customer Dashboard
+ Route::get('/', [\App\Http\Controllers\CustomerController::class, 'customer'])->name('customer.dashboard');
 
 });
 
 
 
+// Venders Routes
+
+Route::group(['prefix' => 'venders', 'middleware' => ['isVender', 'auth', 'PreventBackHistory']], function () {
+
+ // Vender Dashboard
+ Route::get('/', [\App\Http\Controllers\VenderController::class, 'venders'])->name('vender.dashboard');
+
+});

@@ -11,6 +11,5 @@ class AdminController extends Controller
     {
         // return view('backend.layouts.master');
         return view('backend.admin');
-
     }
 }
