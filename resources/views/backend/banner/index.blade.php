@@ -26,7 +26,7 @@
             <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
                 <div>
                     <h1>Banner</h1>
-                    <p class="breadcrumbs"><span><a href="{{ route('admin')}}">Home</a></span>
+                    <p class="breadcrumbs"><span><a href="{{ route('admin.dashboard')}}">Home</a></span>
                         <span><i class="mdi mdi-chevron-right"></i></span>Banner
                     </p>
                 </div>

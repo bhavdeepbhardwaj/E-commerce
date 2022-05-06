@@ -42,6 +42,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventB
 
     // Banner Section
     Route::resource('/banner', 'BannerController');
+    // All User List
+    Route::get('user', [AdminController::class, 'userList'])->name('userList');
+    // All Vender List
+    Route::get('vender', [AdminController::class, 'venderList'])->name('venderList');
+    // All category
+    // Main
+    Route::get('main-category', [AdminController::class, 'mainCategory'])->name('mainCategory');
+    // Sub
+    Route::get('sub-category', [AdminController::class, 'subCategory'])->name('subCategory');
 });
 
 

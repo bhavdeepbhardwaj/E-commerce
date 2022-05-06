@@ -33,20 +33,10 @@
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
-                            <li class="">
-                                <a class="sidenav-item-link" href="vendor-card.html">
-                                    <span class="nav-text">Vendor Grid</span>
-                                </a>
-                            </li>
 
                             <li class="">
-                                <a class="sidenav-item-link" href="vendor-list.html">
+                                <a class="sidenav-item-link" href="{{ route('venderList')}}">
                                     <span class="nav-text">Vendor List</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="sidenav-item-link" href="vendor-profile.html">
-                                    <span class="nav-text">Vendors Profile</span>
                                 </a>
                             </li>
                         </ul>
@@ -61,20 +51,10 @@
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="users" data-parent="#sidebar-menu">
-                            <li>
-                                <a class="sidenav-item-link" href="user-card.html">
-                                    <span class="nav-text">User Grid</span>
-                                </a>
-                            </li>
 
                             <li class="">
-                                <a class="sidenav-item-link" href="user-list.html">
+                                <a class="sidenav-item-link" href="{{ route('userList')}}">
                                     <span class="nav-text">User List</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="sidenav-item-link" href="user-profile.html">
-                                    <span class="nav-text">Users Profile</span>
                                 </a>
                             </li>
                         </ul>
@@ -120,12 +100,12 @@
                     <div class="collapse">
                         <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="main-category.html">
+                                <a class="sidenav-item-link" href="{{ route('mainCategory')}}">
                                     <span class="nav-text">Main Category</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="sub-category.html">
+                                <a class="sidenav-item-link" href="{{ route('subCategory')}}">
                                     <span class="nav-text">Sub Category</span>
                                 </a>
                             </li>

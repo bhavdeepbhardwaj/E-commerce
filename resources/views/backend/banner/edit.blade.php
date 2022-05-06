@@ -40,33 +40,33 @@
                                         <div class="ec-vendor-main-img">
                                             <div class="avatar-upload">
                                                 <div class="avatar-edit">
-                                                    <input type='file' name="webImage" value="{{ $banner->webImage }}" id="imageUpload" class="ec-image-upload"
+                                                    <input type='file' name="webImage" value="/images/Banners/{{ $banner->webImage }}" id="imageUpload" class="ec-image-upload"
                                                         accept=".png, .jpg, .jpeg" />
                                                     <label for="imageUpload"><img
                                                             src="{{ asset('backend/assets/img/icons/edit.svg') }}"
-                                                            class="svg_img header_svg" alt="edit" value="{{ $banner->webImage }}" /></label>
+                                                            class="svg_img header_svg" alt="edit" value="/images/Banners/{{ $banner->webImage }}" /></label>
                                                 </div>
                                                 <div class="avatar-preview ec-preview">
                                                     <div class="imagePreview ec-div-preview">
                                                         <img class="ec-image-preview"
                                                             src="/images/Banners/{{ $banner->webImage }}"
-                                                            value="{{ $banner->webImage }}" alt="{{ $banner->webImage }}" />
+                                                            value="/images/Banners/{{ $banner->webImage }}" alt="{{ $banner->webImage }}" />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="avatar-upload">
                                                 <div class="avatar-edit">
-                                                    <input type='file' name="mobImage" value="{{ $banner->mobImage }}" id="imageUpload" class="ec-image-upload"
+                                                    <input type='file' name="mobImage" value="/images/Banners/{{ $banner->mobImage }}" id="imageUpload" class="ec-image-upload"
                                                         accept=".png, .jpg, .jpeg" />
                                                     <label for="imageUpload"><img
                                                             src="{{ asset('backend/assets/img/icons/edit.svg') }}"
-                                                            class="svg_img header_svg" alt="edit" value="{{ $banner->mobImage }}" /></label>
+                                                            class="svg_img header_svg" alt="edit" value="/images/Banners/{{ $banner->mobImage }}" /></label>
                                                 </div>
                                                 <div class="avatar-preview ec-preview">
                                                     <div class="imagePreview ec-div-preview">
                                                         <img class="ec-image-preview"
                                                             src="/images/Banners/{{ $banner->mobImage }}"
-                                                            value="{{ $banner->mobImage }}" alt="{{ $banner->mobImage }}" />
+                                                            value="/images/Banners/{{ $banner->mobImage }}" alt="{{ $banner->mobImage }}" />
                                                     </div>
                                                 </div>
                                             </div>
